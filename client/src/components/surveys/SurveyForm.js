@@ -30,7 +30,7 @@ class SurveyForm extends Component {
           <Link to="/surveys" className="red btn-flat white-text">
             Cancel
           </Link>
-          <button type="submit" className="teal btn-flat right white-text">
+          <button type="submit" className="btn-flat right light-blue white-text">
             Next
             <i className="material-icons right">done</i>
           </button>
