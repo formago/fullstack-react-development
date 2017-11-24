@@ -1,17 +1,29 @@
 const express = require('express');
 const mongoose = require('mongoose');
+var logger = require('mongo-morgan-ext');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
 require('./models/Survey');
+require('./models/Log');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
 const app = express();
+
+// var db = keys.mongoURI;
+// var collection = 'Logs';
+// var skipfunction = function(req, res) {
+// return res.statusCode > 399;
+//} //Thiw would skip if HTTP request response is less than 399 i.e no errors.
+
+//app.use(logger(db,collection,skipfunction)); //In your express-application
+
+
 
 app.use(bodyParser.json());
 app.use(

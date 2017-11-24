@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
 const User = mongoose.model('users');
+const Log = mongoose.model('logs');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -24,9 +25,11 @@ passport.use(
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
+
       const existingUser = await User.findOne({ googleId: profile.id });
 
       if (existingUser) {
+        await new Log({ date: new Date(), action: "LogIn", profileName: profile.displayName }).save();
         return done(null, existingUser);
       }
 
