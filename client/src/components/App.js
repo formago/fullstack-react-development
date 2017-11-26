@@ -17,15 +17,23 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div>
+        <div className="background-emaily" />
         <BrowserRouter>
           <div>
             <Route exact path="/" component={LandingDefault} />
             <Route path="/cabinet" component={Header} />
-            <Route exact path="/cabinet" component={Landing} />
-            <Route path="/cabinet/surveys" component={Dashboard} />
-            <Route path="/cabinet/surveys/new" component={SurveyNew} />
-            <Route path="/cabinet/administration" component={Administration} />
+            <div className="content">
+              <div className="content-body">
+                <Route exact path="/cabinet" component={Landing} />
+                <Route path="/cabinet/surveys" component={Dashboard} />
+                <Route path="/cabinet/surveys/new" component={SurveyNew} />
+                <Route
+                  path="/cabinet/administration"
+                  component={Administration}
+                />
+              </div>
+            </div>
           </div>
         </BrowserRouter>
       </div>

@@ -27,10 +27,13 @@ class SurveyForm extends Component {
       <div>
         <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
           {this.renderFields()}
-          <Link to="/surveys" className="red btn-flat white-text">
+          <Link to="/cabinet/surveys" className="red btn-flat white-text">
             Cancel
           </Link>
-          <button type="submit" className="btn-flat right light-blue white-text">
+          <button
+            type="submit"
+            className="btn-flat right light-blue white-text"
+          >
             Next
             <i className="material-icons right">done</i>
           </button>
@@ -43,7 +46,7 @@ class SurveyForm extends Component {
 function validate(values) {
   const errors = {};
 
-  errors.recipients = validateEmails(values.recipients || '');
+  errors.recipients = validateEmails(values.recipients || "");
 
   _.each(formFields, ({ name }) => {
     if (!values[name]) {

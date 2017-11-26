@@ -42,8 +42,8 @@ class Header extends Component {
   render() {
     if (this.props.auth) {
       return (
-        <nav>
-          <div className="nav-wrapper light-blue">
+        <nav className="nav-main">
+          <div className="nav-wrapper">
             <Link to="/cabinet" className="brand-logo">
               Emaily
             </Link>
