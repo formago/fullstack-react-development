@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  margin: 0;
+  color:white;
+}
+
+.sub-text{
+    line-height: 70px;
+    color:white;
+}
+#root {
+  background-image: url(./../images/TBNDUDMYR3.jpg);
+  background-size: cover;
+  background-origin: border-box;
+  background-position: center;
+  height: 100%;
+  display: -webkit-box;
+}
+
+.container {
+  height: 100%;
+}
+
+.inner-container {
+  width: 500px;
+  text-align: center;
+  margin: auto;
+}
+
+.login-window {
+  margin-top: 200px;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+
+.login-button{
+    margin-top:20px;
+}

@@ -23,12 +23,12 @@ class Header extends Component {
             Credits: {this.props.auth.credits}
           </li>,
           <li key="5">
-            <Link to={this.props.auth ? "/surveys" : "/"} className="">
+            <Link to={this.props.auth ? "/cabinet/surveys" : "/"} className="">
               Surveys
             </Link>
           </li>,
           <li key="4">
-            <Link to={this.props.auth ? "/administration" : "/"} className="">
+            <Link to={this.props.auth ? "/cabinet/administration" : "/"} className="">
               Administration
             </Link>
           </li>,
@@ -40,17 +40,21 @@ class Header extends Component {
   }
 
   render() {
-    return (
-      <nav>
-        <div className="nav-wrapper light-blue">
-          <Link to="/" className="brand-logo">
-            Emaily
-          </Link>
+    if (this.props.auth) {
+      return (
+        <nav>
+          <div className="nav-wrapper light-blue">
+            <Link to="/cabinet" className="brand-logo">
+              Emaily
+            </Link>
 
-          <ul className="right">{this.renderContent()}</ul>
-        </div>
-      </nav>
-    );
+            <ul className="right">{this.renderContent()}</ul>
+          </div>
+        </nav>
+      );
+    } else {
+      return null;
+    }
   }
 }
 function mapStateToProps({ auth }) {

@@ -7,7 +7,7 @@ const Dashboard = () => {
     <div>
       <SurveyList />
       <div className="fixed-action-btn">
-        <Link to="/surveys/new" className="btn-floating btn-large light-blue">
+        <Link to="/cabinet/surveys/new" className="btn-floating btn-large light-blue">
           <i className="material-icons">add</i>
         </Link>
       </div>
