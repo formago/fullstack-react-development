@@ -26,7 +26,7 @@ class App extends Component {
             <div className="content">
               <div className="content-body">
                 <Route exact path="/cabinet" component={Landing} />
-                <Route path="/cabinet/surveys" component={Dashboard} />
+                <Route exact path="/cabinet/surveys" component={Dashboard} />
                 <Route path="/cabinet/surveys/new" component={SurveyNew} />
                 <Route
                   path="/cabinet/administration"
